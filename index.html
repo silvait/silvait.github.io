@@ -15,10 +15,49 @@
 </head>
 
 <body>
-  <main>
-    <a href="mailto:hello@silvait.com">
-      <img src="img/logo.svg" alt="logo" class="logo"/>
-    </a>
+  <main class="card">
+    <header>
+      <img src="img/logo.svg" alt="Silva IT">
+    </header>
+
+    <footer>
+      <p class="name">Paulo Silva</p>
+      <p class="role">Software Consultant</p>
+      <p class="email">
+        <img src="img/mail.svg">
+        <a href="#" id="email"></a>
+      </p>
+      <p class="phone">
+        <img src="img/phone.svg">
+        <a href="#" id="phone">
+        </a>
+      </p>
+    </footer>
   </main>
 </body>
+
+<script>
+  function reverseString(reversedString) {
+    return reversedString.split('').reverse().join('');
+  }
+
+  function setLink(linkId, href, textContent) {
+    var link = document.getElementById(linkId);
+    link.href = href;
+    link.textContent = textContent;
+  }
+
+  function addEmail(reversedEmail) {
+    var email = reverseString(reversedEmail);
+    setLink('email', 'mailto:' + email, email);
+  }
+
+  function addPhone(reversedPhone) {
+    var phone = reverseString(reversedPhone);
+    setLink('phone', 'tel:' + phone, phone);
+  }
+
+  addPhone('5148.279.919');
+  addEmail('moc.tiavlis@oluap');
+</script>
 </html>
