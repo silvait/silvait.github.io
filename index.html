@@ -4,60 +4,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-  <link rel="manifest" href="manifest.json">
-  <link rel="mask-icon" href="safari-pinned-tab.svg" color="#404040">
   <meta name="theme-color" content="#ffffff">
-  <title>Silva IT</title>
-  <link rel="stylesheet" type="text/css" href="css/index.css" />
+  <title>Silva it!</title>
 </head>
 
 <body>
   <main class="card">
-    <header>
-      <img src="img/logo.svg" alt="Silva IT">
-    </header>
-
-    <footer>
-      <p class="name">Paulo Silva</p>
-      <p class="role">Software Consultant</p>
-      <p class="email">
-        <img src="img/mail.svg">
-        <a href="#" id="email"></a>
-      </p>
-      <p class="phone">
-        <img src="img/phone.svg">
-        <a href="#" id="phone">
-        </a>
-      </p>
-    </footer>
+    <h1>Silva it!</h1>
   </main>
 </body>
-
-<script>
-  function reverseString(reversedString) {
-    return reversedString.split('').reverse().join('');
-  }
-
-  function setLink(linkId, href, textContent) {
-    var link = document.getElementById(linkId);
-    link.href = href;
-    link.textContent = textContent;
-  }
-
-  function addEmail(reversedEmail) {
-    var email = reverseString(reversedEmail);
-    setLink('email', 'mailto:' + email, email);
-  }
-
-  function addPhone(reversedPhone) {
-    var phone = reverseString(reversedPhone);
-    setLink('phone', 'tel:' + phone, phone);
-  }
-
-  addPhone('5148.279.919');
-  addEmail('moc.tiavlis@oluap');
-</script>
 </html>
