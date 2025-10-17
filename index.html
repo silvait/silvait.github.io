@@ -1,9 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Silva it! | Software Consulting</title>
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --accent: #00ffc8;
+      --text: #e0e0e0;
+      --muted: #888;
+    }
 
-<html>
-  <head>
-    <title>Silva it!</title>
-  </head>
-  <body>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      text-align: center;
+      padding: 3rem 1rem;
+      border-bottom: 1px solid var(--accent);
+    }
+
+    header h1 {
+      font-size: 3rem;
+      color: var(--accent);
+      letter-spacing: 2px;
+    }
+
+    header p {
+      color: var(--muted);
+      font-size: 1.1rem;
+    }
+
+    section {
+      max-width: 800px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .card {
+      border: 1px solid var(--accent);
+      border-radius: 8px;
+      padding: 1.5rem;
+      background: rgba(255, 255, 255, 0.02);
+      transition: 0.2s ease-in-out;
+    }
+
+    .card:hover {
+      background: rgba(0, 255, 200, 0.1);
+      transform: translateY(-3px);
+    }
+
+    h2 {
+      color: var(--accent);
+      border-left: 4px solid var(--accent);
+      padding-left: 0.5rem;
+      font-size: 1.6rem;
+    }
+
+    .cta {
+      text-align: center;
+      margin-top: 4rem;
+    }
+
+    .cta a {
+      text-decoration: none;
+      color: var(--bg);
+      background: var(--accent);
+      padding: 0.8rem 2rem;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .cta a:hover {
+      background: #00e6b2;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      border-top: 1px solid var(--accent);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    code {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--accent);
+      padding: 2px 5px;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+    }
+  </style>
+</head>
+<body>
+  <header>
     <h1>Silva it!</h1>
-  </body>
+    <p>Software Consulting for the Modern Era.</p>
+  </header>
+
+  <section>
+    <h2>About</h2>
+    <p>
+      Silva it! provides high-end software consulting with a focus on performance,
+      scalability, and clean architecture. We help businesses transform ideas into
+      reliable, maintainable systems that deliver real results.
+    </p>
+  </section>
+
+  <section>
+    <h2>Services</h2>
+    <div class="services">
+      <div class="card">
+        <h3>Custom Software</h3>
+        <p>Tailored solutions built from the ground up using the latest frameworks and best practices.</p>
+      </div>
+      <div class="card">
+        <h3>Cloud Architecture</h3>
+        <p>Design and deployment of robust cloud systems using AWS.</p>
+      </div>
+      <div class="card">
+        <h3>Code Audits</h3>
+        <p>Deep analysis of your codebase to improve performance, security, and maintainability.</p>
+      </div>
+      <div class="card">
+        <h3>DevOps Automation</h3>
+        <p>Streamline your CI/CD pipelines and automate deployments using modern tooling.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>Let’s Build Something Smart</h2>
+    <p>Contact us today and start shaping your next software success story.</p>
+    <a href="mailto:contact@silvait.com">Get in Touch</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Silva it!. Crafted with <code>&lt;/&gt;</code> and logic.</p>
+  </footer>
+</body>
 </html>
