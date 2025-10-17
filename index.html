@@ -1,156 +1,376 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Silva it! | Software Consulting</title>
-  <style>
-    :root {
-      --bg: #0a0a0a;
-      --accent: #00ffc8;
-      --text: #e0e0e0;
-      --muted: #888;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silva it! - Premium Software Consulting</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Roboto, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            color: #2c3e50;
+            overflow-x: hidden;
+        }
 
-    header {
-      text-align: center;
-      padding: 3rem 1rem;
-      border-bottom: 1px solid var(--accent);
-    }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
 
-    header h1 {
-      font-size: 3rem;
-      color: var(--accent);
-      letter-spacing: 2px;
-    }
+        header {
+            padding: 40px 0;
+            position: relative;
+            z-index: 100;
+        }
 
-    header p {
-      color: var(--muted);
-      font-size: 1.1rem;
-    }
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 300;
+            letter-spacing: 8px;
+            color: #1a5490;
+            text-transform: lowercase;
+            font-style: italic;
+        }
 
-    section {
-      max-width: 800px;
-      margin: 3rem auto;
-      padding: 0 1rem;
-    }
+        .logo::after {
+            content: '!';
+            font-style: normal;
+        }
 
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            padding: 100px 0;
+        }
 
-    .card {
-      border: 1px solid var(--accent);
-      border-radius: 8px;
-      padding: 1.5rem;
-      background: rgba(255, 255, 255, 0.02);
-      transition: 0.2s ease-in-out;
-    }
+        .hero-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(26, 84, 144, 0.08) 0%, transparent 70%);
+            animation: pulse 8s ease-in-out infinite;
+        }
 
-    .card:hover {
-      background: rgba(0, 255, 200, 0.1);
-      transform: translateY(-3px);
-    }
+        @keyframes pulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.3; }
+            50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.5; }
+        }
 
-    h2 {
-      color: var(--accent);
-      border-left: 4px solid var(--accent);
-      padding-left: 0.5rem;
-      font-size: 1.6rem;
-    }
+        .hero-content {
+            position: relative;
+            z-index: 10;
+        }
 
-    .cta {
-      text-align: center;
-      margin-top: 4rem;
-    }
+        h1 {
+            font-size: 4.5rem;
+            font-weight: 300;
+            margin-bottom: 30px;
+            letter-spacing: 3px;
+            line-height: 1.2;
+        }
 
-    .cta a {
-      text-decoration: none;
-      color: var(--bg);
-      background: var(--accent);
-      padding: 0.8rem 2rem;
-      border-radius: 5px;
-      font-weight: bold;
-      transition: 0.2s;
-    }
+        .tagline {
+            font-size: 1.5rem;
+            color: #5a6c7d;
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin-bottom: 50px;
+        }
 
-    .cta a:hover {
-      background: #00e6b2;
-    }
+        .cta-button {
+            display: inline-block;
+            padding: 18px 50px;
+            background: transparent;
+            border: 1px solid #1a5490;
+            color: #1a5490;
+            text-decoration: none;
+            letter-spacing: 3px;
+            font-size: 0.9rem;
+            transition: all 0.4s ease;
+            text-transform: uppercase;
+            position: relative;
+            overflow: hidden;
+        }
 
-    footer {
-      text-align: center;
-      padding: 2rem;
-      border-top: 1px solid var(--accent);
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: #1a5490;
+            transition: left 0.4s ease;
+            z-index: -1;
+        }
 
-    code {
-      background: rgba(255, 255, 255, 0.05);
-      color: var(--accent);
-      padding: 2px 5px;
-      border-radius: 4px;
-      font-family: 'Courier New', monospace;
-    }
-  </style>
+        .cta-button:hover::before {
+            left: 0;
+        }
+
+        .cta-button:hover {
+            color: #ffffff;
+        }
+
+        .section {
+            padding: 120px 0;
+            border-top: 1px solid rgba(26, 84, 144, 0.15);
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 300;
+            margin-bottom: 60px;
+            text-align: center;
+            letter-spacing: 2px;
+            color: #1a5490;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 60px;
+            margin-top: 80px;
+        }
+
+        .service-card {
+            padding: 50px 40px;
+            background: rgba(255, 255, 255, 0.6);
+            border: 1px solid rgba(26, 84, 144, 0.2);
+            transition: all 0.5s ease;
+            position: relative;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: #1a5490;
+            transition: width 0.5s ease;
+        }
+
+        .service-card:hover::before {
+            width: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 20px 40px rgba(26, 84, 144, 0.1);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 30px;
+            border: 2px solid #1a5490;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #1a5490;
+        }
+
+        .service-card h3 {
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .service-card p {
+            line-height: 1.8;
+            color: #5a6c7d;
+            font-size: 1.05rem;
+        }
+
+        .philosophy {
+            background: linear-gradient(180deg, transparent 0%, rgba(26, 84, 144, 0.05) 100%);
+        }
+
+        .philosophy-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.3rem;
+            line-height: 2;
+            color: #5a6c7d;
+            font-style: italic;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 60px;
+            margin-top: 80px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 4rem;
+            color: #1a5490;
+            font-weight: 300;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: #5a6c7d;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        footer {
+            padding: 80px 0 40px;
+            text-align: center;
+            border-top: 1px solid rgba(26, 84, 144, 0.15);
+        }
+
+        footer p {
+            color: #8899a6;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+        }
+
+        .emphasis {
+            color: #1a5490;
+            font-style: normal;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .tagline {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .container {
+                padding: 0 20px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Silva it!</h1>
-    <p>Software Consulting for the Modern Era.</p>
-  </header>
+    <header>
+        <div class="container">
+            <div class="logo">silva it</div>
+        </div>
+    </header>
 
-  <section>
-    <h2>About</h2>
-    <p>
-      Silva it! provides high-end software consulting with a focus on performance,
-      scalability, and clean architecture. We help businesses transform ideas into
-      reliable, maintainable systems that deliver real results.
-    </p>
-  </section>
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <div class="container">
+                <h1>Synergize Your<br>Digital Paradigm</h1>
+                <p class="tagline">Boutique consulting that doesn't just think outside the box—we've disrupted the box entirely</p>
+                <a href="#contact" class="cta-button">Leverage Our Expertise</a>
+            </div>
+        </div>
+    </section>
 
-  <section>
-    <h2>Services</h2>
-    <div class="services">
-      <div class="card">
-        <h3>Custom Software</h3>
-        <p>Tailored solutions built from the ground up using the latest frameworks and best practices.</p>
-      </div>
-      <div class="card">
-        <h3>Cloud Architecture</h3>
-        <p>Design and deployment of robust cloud systems using AWS.</p>
-      </div>
-      <div class="card">
-        <h3>Code Audits</h3>
-        <p>Deep analysis of your codebase to improve performance, security, and maintainability.</p>
-      </div>
-      <div class="card">
-        <h3>DevOps Automation</h3>
-        <p>Streamline your CI/CD pipelines and automate deployments using modern tooling.</p>
-      </div>
-    </div>
-  </section>
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Core Competencies</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">◇</div>
+                    <h3>Strategic Silvation</h3>
+                    <p>We don't just solve problems—we <span class="emphasis">silva</span> them. Through our proprietary methodology of agile silvation sprints, we transform your technical debt into technical equity. Your legacy systems will thank us.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">◆</div>
+                    <h3>Bespoke Architecture</h3>
+                    <p>Hand-crafted, artisanal code architecture that scales. Each microservice is lovingly containerized with the care of a Swiss watchmaker. Your infrastructure will be so elegant, it belongs in a gallery.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">◈</div>
+                    <h3>Innovation Facilitation</h3>
+                    <p>We facilitate innovation through cross-functional ideation workshops and synergy optimization sessions. Think of us as your company's designated disruptors—but in a really polished, professional way.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <section class="cta">
-    <h2>Let’s Build Something Smart</h2>
-    <p>Contact us today and start shaping your next software success story.</p>
-    <a href="mailto:contact@silvait.com">Get in Touch</a>
-  </section>
+    <section class="section philosophy">
+        <div class="container">
+            <h2 class="section-title">The Silva it! Philosophy</h2>
+            <div class="philosophy-content">
+                <p>In a world drowning in technical debt and legacy systems, we emerge as your beacon of digital transformation. We don't do cookie-cutter solutions or boilerplate strategies. Every engagement is a bespoke journey toward operational excellence.</p>
+                <br><br>
+                <p>We believe in moving fast and <span class="emphasis">silvaring</span> things—but with the precision of a neurosurgeon and the style of a fashion designer.</p>
+            </div>
+        </div>
+    </section>
 
-  <footer>
-    <p>© 2025 Silva it!. Crafted with <code>&lt;/&gt;</code> and logic.</p>
-  </footer>
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Impact Metrics</h2>
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number">847%</div>
+                    <div class="stat-label">Average ROI</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">∞</div>
+                    <div class="stat-label">Paradigms Shifted</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">42</div>
+                    <div class="stat-label">Boxes Eliminated</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="contact">
+        <div class="container">
+            <h2 class="section-title">Ready to Silva?</h2>
+            <div style="text-align: center; margin-top: 60px;">
+                <p style="font-size: 1.3rem; color: #5a6c7d; margin-bottom: 30px; letter-spacing: 1px;">
+                    Let's orchestrate a strategic alignment session and synergize our value propositions.
+                </p>
+                <p style="font-size: 1.5rem; color: #1a5490; letter-spacing: 3px;">
+                    hello@silvait.consulting
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Silva it! Consulting. All paradigms reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
